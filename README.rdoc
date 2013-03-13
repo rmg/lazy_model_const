@@ -26,6 +26,17 @@ app/model/user.rb:
     end
   end
 
+RSpec isn't required, but if you happen to use it you can use the helper.
+
+spec/spec_helper.rb:
+  require 'lazy_const/spec'
+
+spec/model/group_spec.rb:
+  describe Group do
+    defines_model_const :EVERYONE
+    # ...
+  end
+
 == Contributing to lazy_model_const
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
