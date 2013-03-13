@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "lazy_model_const"
   gem.homepage = "http://github.com/rmg/lazy_model_const"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A version of lazy_const specifically for ActiveRecord models}
+  gem.description = %Q{Allows you to define lazy evaluated, constant-like, instances of your models}
   gem.email = "r.m.graham@gmail.com"
   gem.authors = ["Ryan Graham"]
   # dependencies defined in Gemfile
