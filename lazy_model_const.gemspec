@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "lazy_model_const.gemspec",
     "lib/lazy_model_const.rb",
     "lib/lazy_model_const/spec.rb",
     "test/helper.rb",
