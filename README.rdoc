@@ -1,6 +1,30 @@
 = lazy_model_const
 
-Description goes here.
+A convenient variant of +lazy_const+ with an eye towards ActiveRecord models.
+
+== Installation
+
+  gem 'lazy_model_const'
+
+== Example
+
+Here's an example using Rails. Really, any class that has a class method +find_or_create_by_name+ can be used.
+If you're not using ActiveRecord, you probably want to use the +lazy_const+ gem.
+
+app/model/group.rb:
+  class Group < ActiveRecord::Base
+    extend LazyConst
+    lazy_const :EVERYONE, name: 'Everyone'
+  end
+
+app/model/user.rb:
+  class User < ActiveRecord::Base
+    has_many :groups
+    after_create :add_to_everyone
+    def add_to_everyone
+      groups << Group.EVERYONE
+    end
+  end
 
 == Contributing to lazy_model_const
  
@@ -14,6 +38,4 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2013 Ryan Graham. See LICENSE.txt for
-further details.
-
+Copyright (c) 2013 Ryan Graham. See LICENSE.txt for further details. (TL;DR: MIT license)
